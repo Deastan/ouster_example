@@ -51,6 +51,10 @@ $ roslaunch cartographer_ros demo_my_robot_2d_localization.launch \
 // WORKS
 roslaunch cartographer_ros demo_my_robot_2d_localization.launch    load_state_filename:=/home/jonathan/map_catkin_ws/office_map4.bag.pbstream bag_filename:=/home/jonathan/map_catkin_ws/findMe_office_map4.bag
 
+
+Robot lcalization:
+<node name="playbag" pkg="rosbag" type="play"
+    args="--clock $(arg bag_filename)" />
 ## Cartographer-OUSTER
 // Launch a real-time localization
 - Open three terminal,
