@@ -1,8 +1,8 @@
 # ouster_example
 
-Commands to use the contents of the repository. Be carefull with the path of the different files. 
+Commands to use the contents of the repository. Be carefull with the path of the different files.
 ## Start the Lidar (Ouster)
-Before to use it, you have to follow the process in their documentation to install the ladar and after each time you wan to use it : 
+Before to use it, you have to follow the process in their documentation to install the ladar and after each time you wan to use it :
 sudo systemctl stop dnsmasq
 sudo systemctl start dnsmasq
 
@@ -60,6 +60,7 @@ roslaunch cartographer_ros demo_my_robot_2d_localization.launch    load_state_fi
 $ roslaunch ouster_ros os1.launch os1_hostname:=192.168.1.123 os1_udp_dest:=192.168.1.1
 $ rosbag play --clock /home/jonathan/map_catkin_ws/findMe_office_map4.bag
 and set the rosbag in pause and launch the last command in the last terminal on map_catkin_ws
+$ source install_isolated/setup.bash
 $ roslaunch cartographer_ros demo_my_robot_2d_localization.launch    load_state_filename:=/home/jonathan/map_catkin_ws/office_map4.bag.pbstream
 
 After a few second, you can see the position of the robot.
