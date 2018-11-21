@@ -2,7 +2,7 @@
 
 Commands :
 
-// Start the Lidar (Ouster)
+## Start the Lidar (Ouster)
 sudo systemctl stop dnsmasq
 sudo systemctl start dnsmasq
 
@@ -14,7 +14,7 @@ $ roslaunch ouster_ros os1.launch os1_hostname:=192.168.1.123 os1_udp_dest:=192.
 // Record a rosbag from LIDAR OUSTER:
 $ rosbag record /os1_node/points /os1_node/imu
 
-
+## Cartographer
 // If issue with cartographer:
 $ source install_isolated/setup.bash
 
@@ -51,7 +51,7 @@ $ roslaunch cartographer_ros demo_my_robot_2d_localization.launch \
 // WORKS
 roslaunch cartographer_ros demo_my_robot_2d_localization.launch    load_state_filename:=/home/jonathan/map_catkin_ws/office_map4.bag.pbstream bag_filename:=/home/jonathan/map_catkin_ws/findMe_office_map4.bag
 
-// Cartographer-Ros
+## Cartographer-OUSTER
 // Launch a real-time localization
 - Open three terminal,
 - Go in map_catkin_ws in the two first and catkin_ws_kyb for the last one
