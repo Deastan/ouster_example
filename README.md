@@ -1,8 +1,8 @@
 # ouster_example
 
-Commands :
-
+Commands to use the contents of the repository. Be carefull with the path of the different files. 
 ## Start the Lidar (Ouster)
+Before to use it, you have to follow the process in their documentation to install the ladar and after each time you wan to use it : 
 sudo systemctl stop dnsmasq
 sudo systemctl start dnsmasq
 
