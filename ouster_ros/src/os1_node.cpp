@@ -30,12 +30,17 @@
 #include "ouster_ros/PacketMsg.h"
 #include "ouster_ros/os1_ros.h"
 
+#include <tf2_ros/transform_broadcaster.h>
+#include <tf2_geometry_msgs/tf2_geometry_msgs.h>
+
 using ns = std::chrono::nanoseconds;
 using PacketMsg = ouster_ros::PacketMsg;
 
 int main(int argc, char** argv) {
     ros::init(argc, argv, "ouster_driver");
     ros::NodeHandle nh("~");
+
+    tf2_ros::TransformBroadcaster br;
 
     auto scan_dur = ns(nh.param("scan_dur_ns", 100000000));
     auto os1_hostname = nh.param("os1_hostname", std::string("localhost"));

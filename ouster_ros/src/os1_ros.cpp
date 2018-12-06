@@ -32,8 +32,8 @@ sensor_msgs::Imu packet_to_imu_msg(const PacketMsg& p) {
     sensor_msgs::Imu m;
     const uint8_t* buf = p.buf.data();
 
-    // m.header.stamp = ros::Time::now();
-    m.header.stamp.fromNSec(imu_gyro_ts(buf));
+    m.header.stamp = ros::Time::now();
+    // m.header.stamp.fromNSec(imu_gyro_ts(buf));
 
     m.header.frame_id = "base_imu"; //os1_imu
 
@@ -71,8 +71,23 @@ sensor_msgs::PointCloud2 cloud_to_cloud_msg(const CloudOS1& cloud, ns timestamp,
     msg.header.frame_id = "base_laser";//frame;
     msg.header.stamp.fromNSec(timestamp.count());
     // msg.header.stamp = ros::Time::now();
+
+    // // Publish tf btw base_laser and base_link
+    // geometry_msgs::TransformStamped odom_trans;
+    // // odom_trans.header.stamp = current_time;
+    // odom_trans.header.stamp.fromNSec(timestamp.count());
+    // odom_trans.header.frame_id = "base_link";
+    // odom_trans.child_frame_id = "base_laser";
+    // odom_trans.transform.translation.x = 1.0;
+    // odom_trans.transform.translation.y = 0.0;
+    // odom_trans.transform.translation.z = 1.0;
+    // odom_trans.transform.rotation = tf::createQuaternionMsgFromYaw(DEGTORAD(0.0));
+    // br.sendTransform(odom_trans);
+
     return msg;
 }
+
+
 
 static PointOS1 nth_point(int ind, const uint8_t* col_buf) {
     float h_angle_0 = col_h_angle(col_buf);
