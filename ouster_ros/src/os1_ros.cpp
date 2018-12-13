@@ -69,8 +69,8 @@ sensor_msgs::PointCloud2 cloud_to_cloud_msg(const CloudOS1& cloud, ns timestamp,
     sensor_msgs::PointCloud2 msg;
     pcl::toROSMsg(cloud, msg);
     msg.header.frame_id = "base_laser";//frame;
-    msg.header.stamp.fromNSec(timestamp.count());
-    // msg.header.stamp = ros::Time::now();
+    // msg.header.stamp.fromNSec(timestamp.count());
+    msg.header.stamp = ros::Time::now();
 
     // // Publish tf btw base_laser and base_link
     // geometry_msgs::TransformStamped odom_trans;

@@ -1,8 +1,9 @@
 <launch>
 
-  <param name="/use_sim_time" value="true"/>
-
-  <arg name="scan_dur_ns" default="100000000" doc="nanoseconds to batch lidar packets before publishing a cloud"/>
+  <param name="/use_sim_time" value="false"/>
+  <!-- This allows to pass the tests for cartographer-test bag but flashing issue on   -->
+  <!-- <arg name="scan_dur_ns" default="50000000" doc="nanoseconds to batch lidar packets before publishing a cloud"/> -->
+  <arg name="scan_dur_ns" default="99900000" doc="nanoseconds to batch lidar packets before publishing a cloud"/>
   <arg name="os1_hostname" default="localhost" doc="hostname or IP in dotted decimal form of the sensor"/>
   <arg name="os1_udp_dest" default="192.168.1.1" doc="hostname or IP where the sensor will send data packets"/>
   <arg name="os1_lidar_port" default="7502" doc="port to which the sensor should send lidar data"/>
